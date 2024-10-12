@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import environ
 
+# Load environment variables
 env = environ.Env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+# Read environment variables from file
 environ.Env.read_env(BASE_DIR / ".env")
 
 # Quick-start development settings - unsuitable for production
@@ -75,7 +76,7 @@ WSGI_APPLICATION = "biblioteca_api.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+# Read environment variables from file and set database configuration
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",

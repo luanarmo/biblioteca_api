@@ -18,7 +18,7 @@ def eliminar_autor(autor: Autor) -> None:
     """
 
     # Verifica si existen libros asociados al autor
-    if Libro.objects.filter(autor=autor).exists():
+    if Libro.objects.filter(autor_id=autor).exists():
         raise ValidationError(
             {"autor": "No se puede eliminar el autor porque tiene libros asociados"}
         )

@@ -42,7 +42,8 @@ class AutorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Autor  # Especifica el modelo asociado con el serializador
-        exclude = ["id"]  # Excluye el campo 'id' pero incluye todos los demás
+        fields = "__all__"  # Incluye todos los campos del modelo
+        read_only_fields = ["id"]  # Hace que el campo 'id' sea de solo lectura
 
 
 class LibroSerializer(serializers.ModelSerializer):
@@ -68,4 +69,5 @@ class LibroSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Libro  # Especifica el modelo asociado con el serializador
-        exclude = ["id"]  # Excluye el campo 'id' pero incluye todos los demás
+        fields = "__all__"  # Incluye todos los campos del modelo
+        read_only_fields = ["id"]  # Hace que el campo 'id' sea de solo lectura

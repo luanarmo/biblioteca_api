@@ -2,7 +2,7 @@ from rest_framework.viewsets import ModelViewSet
 
 from .models import Libro, Autor
 from .serializers import LibroSerializer, AutorSerializer
-from ..util_commons.pagination import CustomPagination
+from util_commons.pagination import CustomPagination
 
 
 class LibroViewSet(ModelViewSet):
